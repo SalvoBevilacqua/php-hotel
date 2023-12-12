@@ -55,8 +55,8 @@ $hotels = [
 </head>
 
 <body>
-
     <?php
+    $hotels_filtered = [];
     if ($filter = 'all') {
         $hotels_filtered = $hotels;
     } else if ($filter = 'yes') {
@@ -88,7 +88,7 @@ $hotels = [
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($hotels as $key => $value) { ?>
+                    <?php foreach ($hotels_filtered as $key => $value) { ?>
                         <tr>
                             <th scope="row"><?php echo $key; ?></th>
                             <td><?php echo $value['name']; ?></td>
