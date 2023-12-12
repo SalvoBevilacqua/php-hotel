@@ -49,8 +49,8 @@
             'distance_to_center' => 50
         ]
     ];
-
     ?>
+
     <div class="d-flex justify-content-center p-5">
         <table class="table w-50">
             <thead>
@@ -68,9 +68,15 @@
                     <tr>
                         <th scope="row"><?php echo $key; ?></th>
                         <td><?php echo $value['name']; ?></td>
-                        <td class="text-center"><?php echo $value['parking']; ?></td>
+                        <td class="text-center"><?php
+                                                if ($value['parking']) {
+                                                    echo 'Yes';
+                                                } else {
+                                                    echo 'No';
+                                                }
+                                                ?></td>
                         <td class="text-center"><?php echo $value['vote']; ?></td>
-                        <td class="text-center"><?php echo $value['distance_to_center']; ?></td>
+                        <td class="text-center"><?php echo $value['distance_to_center']; ?> Km</td>
                     </tr>
                 <?php } ?>
 
