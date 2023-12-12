@@ -69,11 +69,8 @@
                         <th scope="row"><?php echo $key; ?></th>
                         <td><?php echo $value['name']; ?></td>
                         <td class="text-center"><?php
-                                                if ($value['parking']) {
-                                                    echo 'Yes';
-                                                } else {
-                                                    echo 'No';
-                                                }
+                                                $park = $value['parking'] ? 'Yes' : 'No';
+                                                echo $park;
                                                 ?></td>
                         <td class="text-center"><?php echo $value['vote']; ?></td>
                         <td class="text-center"><?php echo $value['distance_to_center']; ?> Km</td>
