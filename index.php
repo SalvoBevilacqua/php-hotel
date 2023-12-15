@@ -11,7 +11,6 @@
 
 <body>
     <?php
-
     $hotels = [
         [
             'name' => 'Hotel Belvedere',
@@ -49,12 +48,14 @@
             'distance_to_center' => 50
         ]
     ];
+
+    include 'filter.php';
     ?>
 
     <div class="d-flex flex-column align-items-center mt-5">
-        <form action="filter.php" method="GET">
+        <form action="index.php" method="GET">
             <button type="submit" class="btn btn-dark my-2">With Parking?</button>
-            <select class="form-select" aria-label="parking" id="filter" name="filter">
+            <select class="form-select" aria-label="parking" name="filter">
                 <option value="all">All</option>
                 <option value="yes">Yes</option>
                 <option value="none">No</option>
@@ -73,13 +74,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($hotels as $key => $value) { ?>
+                    <?php foreach ($hotels_filtered as $key => $value) { ?>
                         <tr>
                             <th scope="row"><?php echo $key; ?></th>
                             <td><?php echo $value['name']; ?></td>
                             <td class="text-center"><?php
-                                                    $park = $value['parking'] ? 'Yes' : 'No';
-                                                    echo $park;
+                                                    echo $value['parking'] ? 'Yes' : 'No';
                                                     ?></td>
                             <td class="text-center"><?php echo $value['vote']; ?></td>
                             <td class="text-center"><?php echo $value['distance_to_center']; ?> Km</td>
