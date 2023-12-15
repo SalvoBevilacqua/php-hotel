@@ -53,14 +53,25 @@
     ?>
 
     <div class="d-flex flex-column align-items-center mt-5">
-        <form action="index.php" method="GET">
-            <button type="submit" class="btn btn-dark my-2">With Parking?</button>
-            <select class="form-select" aria-label="parking" name="filter">
+
+        <form action="index.php" method="GET" class="d-flex gap-2 align-items-center">
+            <label for="parking">Parking</label>
+            <select class="form-select" aria-label="parking" name="filter" id="parking">
                 <option value="all">All</option>
                 <option value="yes">Yes</option>
                 <option value="none">No</option>
             </select>
+
+            <label for="vote">Vote</label>
+            <select class="form-select" aria-label="parking" name="vote" id="vote">
+                <option value="all">All</option>
+                <option value="1">1-3</option>
+                <option value="4">4-5</option>
+            </select>
+            <button type="submit" class="btn btn-dark my-2">Filter</button>
         </form>
+
+
 
         <div class="d-flex justify-content-center p-5">
             <table class="table">
