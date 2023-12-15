@@ -53,7 +53,6 @@
     ?>
 
     <div class="d-flex flex-column align-items-center mt-5">
-
         <form action="index.php" method="GET" class="d-flex gap-2 align-items-center">
             <label for="parking">Parking</label>
             <select class="form-select" aria-label="parking" name="filter" id="parking">
@@ -70,8 +69,6 @@
             </select>
             <button type="submit" class="btn btn-dark my-2">Filter</button>
         </form>
-
-
 
         <div class="d-flex justify-content-center p-5">
             <table class="table">
