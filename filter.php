@@ -36,7 +36,6 @@ if (isset($_GET['filter']) && isset($_GET['vote'])) {
     }
     // imposto la condizione nel caso in cui sia filtrato solo il voto
     if ($vote != 'all') {
-        $vote = $_GET['vote'];
         if ($vote == '1') {
             $temp_array_filter = array_filter($hotels_filtered, fn ($hotel) => $hotel['vote'] < 4);
             $hotels_filtered = $temp_array_filter;
