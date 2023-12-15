@@ -7,7 +7,7 @@ $hotels_filtered = $hotels;
 if (isset($_GET['filter']) && isset($_GET['vote'])) {
     $vote = $_GET['vote'];
     $filter = $_GET['filter'];
-    // imposto la condizione nel caso in cui sia filtrati entrambi
+    // imposto la condizione nel caso in cui siano filtrati entrambi
     if ($vote != 'all' && $filter != 'all') {
         if ($filter == 'yes') {
             $temp_array_filter = array_filter($hotels_filtered, fn ($hotel) => $hotel['parking'] === true);
